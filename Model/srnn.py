@@ -22,7 +22,7 @@ class SRNNHidden(nn.Module):
     if h == None:
       h = self.fr(x)*torch.sigmoid(self.gatBranch(x))
     else:
-      h = torch.matmul(h,self.wp)+self.fr(x)*F.sigmoid(self.gatBranch(x))
+      h = torch.matmul(h,self.wp)+self.fr(x)*torch.sigmoid(self.gatBranch(x))
       
     return self.lastLayer(h),h
 
